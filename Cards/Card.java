@@ -2,6 +2,7 @@ package Cards;
 
 public abstract class Card {
 
-    public abstract String name;
+    public String name;
+    public String controller;
 
 }

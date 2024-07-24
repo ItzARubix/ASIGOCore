@@ -2,9 +2,10 @@ package Cards;
 
 public abstract class Weapon extends Card {
 
-	public abstract String name;
-	public abstract int attackVal;
-	public abstract int blockVal;
+	public String name;
+	public String controller;
+	public int attackVal;
+	public int blockVal;
 
 	public boolean fieldCondition = true;
 	/*
