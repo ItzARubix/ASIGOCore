@@ -18,6 +18,17 @@ public abstract class Weapon extends Card {
 	This is because some Weapons have conditions that must be met in order for them to be played
 	*/
 
+	public void onEnteredEffect() {
+
+	}
+	/*
+	When a player chooses to play their one Weapon per turn, that Weapon is moved from hand to field.
+	As established, this action does not go into the Outlet, because it isn't an effect.
+	However, some Weapons have effects that go to the Outlet when the Weapon is played in this way.
+	This function, onEnteredEffect(), is that effect.
+	Not all Weapons have an effect like this, so by default, this method is blank.
+	*/
+
 	public boolean activatedEffectCondition = false;
 	//If a Weapon has an activated effect, the activation condition would be checked here. 
 
