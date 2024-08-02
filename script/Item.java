@@ -1,9 +1,9 @@
 public abstract class Item extends Card {
 
-	public boolean activationCondition;
-	//public boolean activationCondition = (GameManager.Phase == "main" && GameManager.Turn == controller);
+	protected boolean activationCondition;
+	//protected boolean activationCondition = (GameManager.Phase == "main" && GameManager.Turn == controller);
 
-	public void activatedEffect() {
+	protected void activatedEffect() {
 		//Empty by default
 	}
 	

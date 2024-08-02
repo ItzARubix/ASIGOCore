@@ -1,6 +1,6 @@
 public abstract class Card {
 
-    public String name;
-    public String controller;
+    protected String name;
+    protected String controller;
 
 }

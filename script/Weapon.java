@@ -1,11 +1,9 @@
 public abstract class Weapon extends Card {
 
-	public String name;
-	public String controller;
-	public int attackVal;
-	public int blockVal;
+	protected int attackVal;
+	protected int blockVal;
 
-	public boolean fieldCondition = true;
+	protected boolean fieldCondition = true;
 	/*
 	This bool, fieldCondition, determines when this Weapon is allowed to be moved from hand to field.
 	By default, it's always true. 
@@ -17,7 +15,7 @@ public abstract class Weapon extends Card {
 	This is because some Weapons have conditions that must be met in order for them to be played
 	*/
 
-	public void onEnteredEffect() {
+	protected void onEnteredEffect() {
 
 	}
 	/*
@@ -28,10 +26,10 @@ public abstract class Weapon extends Card {
 	Not all Weapons have an effect like this, so by default, this method is blank.
 	*/
 
-	public boolean activatedEffectCondition = false;
+	protected boolean activatedEffectCondition = false;
 	//If a Weapon has an activated effect, the activation condition would be checked here. 
 
-	public void activatedEffect() {
+	protected void activatedEffect() {
 
 	}
 	//You know the drill. This effect goes in the Outlet. 
