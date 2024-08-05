@@ -7,11 +7,7 @@ public abstract class Card {
     protected void activatedEffect() {
         //Weapons, Items, and Aces all have activated effects
         //This effect can be activated as long as this.activationCondition is true
-        if(!this.activationCondition) {
-            System.out.println("Cannot be activated (condition not met)");
-        } else {
-            //I'll figure it out lol
-        }
+        //Despite this, activationCondition will not be checked here, it'll be checked elsewhere. 
     }
 
 }
