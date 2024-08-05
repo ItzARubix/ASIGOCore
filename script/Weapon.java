@@ -1,4 +1,4 @@
-public abstract class Weapon extends Card {
+public class Weapon extends Card {
 
 	protected int attackVal;
 	protected int blockVal;
@@ -12,7 +12,7 @@ public abstract class Weapon extends Card {
 	the turn player can move a Weapon from their hand to one of their Weapon Slots on the field. 
 	This game action does not get added to the Outlet, as it is not an effect.
 	This bool, fieldCondition, is checked when the player attempts to perform this game action.
-	This is because some Weapons have conditions that must be met in order for them to be played
+	This is because some Weapons have conditions that must be met in order for them to be played.
 	*/
 
 	protected void onEnteredEffect() {
@@ -25,13 +25,5 @@ public abstract class Weapon extends Card {
 	This function, onEnteredEffect(), is that effect.
 	Not all Weapons have an effect like this, so by default, this method is blank.
 	*/
-
-	protected boolean activatedEffectCondition = false;
-	//If a Weapon has an activated effect, the activation condition would be checked here. 
-
-	protected void activatedEffect() {
-
-	}
-	//You know the drill. This effect goes in the Outlet. 
 
 }
