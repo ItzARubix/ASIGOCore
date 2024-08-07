@@ -12,5 +12,34 @@ Many of these rules are subject to change (especially as more playtesting occurs
 ### Deckbuilding rules
 **ASIGOC** decks are made of exactly 15 cards, with no repeats allowed (that is, you cannot have more than one copy of the same card in your deck). In addition, each player chooses one Ace card (this card does not contribute to the 15 card deck target), which is separated from the deck and placed in the Ace zone at the start of the game. 
 
-### Primary game loop
-I'll finish this later
+### General Information
+The game is played between two players, each of whom has a deck that follows the above specifications.  
+
+There are three types of cards: Weapons, Items, and Aces. Weapons and Items make up each individual's deck, and in addition each player has one Ace that sits outside of your deck in its own special Ace Zone, as mentioned above. 
+
+The turn structure is as follows:
+
+1. Draw step
+2. Main step
+3. Battle step
+4. End step
+
+The first player skips their first Battle step. 
+
+### Starting the game
+Each player starts with 10 health.
+
+At the start of the game, each player takes their Ace and places it in the Ace zone (as mentioned above) and then shuffles their 15 card deck. From there, each player draws four cards.
+
+### Draw step
+At the start of the Draw step, the turn player draws a card. 
+
+### Main step
+Most of the action occurs in the Main step.
+
+Each player has two Weapon slots on the field, and each turn, during the Main step, the turn player may move a Weapon from their hand to one of their Weapon slots, or they may take a Weapon currently in one of their Weapon slots and return it to their hand. 
+
+Items have an activation condition directly on the card, but by default, this activation condition is that it is the turn player's Main step (and that the Outlet is empty, we'll get to that in a second). Whenever an Item's activation condition is met and its controller has priority (we'll get to that too), the controller declares that they are using the Item and sends it to their discard pile, and the effect that is written on the card occurs. 
+
+### Battle step
+I'll finish this later lol
