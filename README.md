@@ -31,15 +31,22 @@ Each player starts with 10 health.
 
 At the start of the game, each player takes their Ace and places it in the Ace zone (as mentioned above) and then shuffles their 15 card deck. From there, each player draws four cards.
 
-### Draw step
+#### Draw step
 At the start of the Draw step, the turn player draws a card. 
 
-### Main step
+#### Main step
 Most of the action occurs in the Main step.
 
 Each player has two Weapon slots on the field, and each turn, during the Main step, the turn player may move a Weapon from their hand to one of their Weapon slots, or they may take a Weapon currently in one of their Weapon slots and return it to their hand. 
 
 Items have an activation condition directly on the card, but by default, this activation condition is that it is the turn player's Main step (and that the Outlet is empty, we'll get to that in a second). Whenever an Item's activation condition is met and its controller has priority (we'll get to that too), the controller declares that they are using the Item and sends it to their discard pile, and the effect that is written on the card occurs. 
 
-### Battle step
-I'll finish this later lol
+#### Battle step
+Each Weapon has an Attack value and a Block value, both of which are relevant during the Battle step. The turn player first chooses a Weapon to attack with, and the opponent chooses if they want to block. If they don't block, they take damage equal to the attack value of the attacking Weapon. If they do block, they must choose which of their Weapons to block with. If they block with a Weapon that has a Block value equal to or greater than the Attack value of the attacking Weapon, they take no damage, and the Block value of the blocking Weapon is permanently decreased by 1. If they block with a Weapon that has a Block value lower than the Attack value of the attacking Weapon, the blocking Weapon is sent to the discard pile and the defending player takes damage equal to the difference between the Attack value of the attacking Weapon and the Block value of the blocking Weapon. 
+
+The turn player may attack with any number of Weapons, and does so one at a time (attack with first weapon is declared -> opponent chooses to block or take it -> damage is calculated and Weapon is destroyed if necessary -> turn player may choose to attack with second Weapon if they can and want to. Otherwise, they pass)
+
+#### End step
+The turn player declares that they are ending their turn and the other player begins from the Draw step again. 
+
+
