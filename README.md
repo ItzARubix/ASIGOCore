@@ -1,6 +1,11 @@
 # ASIGOCore
 It stands for "A SImple Game Of Cards."
 
+## Before getting into the nitty-gritty...
+Two things:
+1. If any of these rules don't make sense to you, or you otherwise have any questions, please feel free to open an Issue. I will do my best to answer them as best as I can
+2. This project had code previously and I decided to do a full wipe of all the code. I was using Java to create this project, but after a while it became evident that Java was not well suited for this project. I will begin working on this project again once I feel more comfortable with Ruby. Until then, you're still welcome to try to contribute (either by asking for rules clarifications in Issues or even attempting to use the vague paragraph of rules that I've given here to try to write some code, though I can't recommend that second one in good faith when I haven't even done it myself. You can also expand on the rules if you'd like, right now they are pretty bare-bones and don't account for a lot of the interactions that I envision, so feel free to open Pull Requests if you'd like)
+
 ## What is ASIGOCore?
 **ASIGOCore** is meant to serve as the backend for an **ASIGOC** simulator (the C can be silent if you don't like ending with a consonant). **ASIGOC** is a Trading Card Game (similar in style to the *Yu-Gi-Oh! Trading Card Game*) that I made as part of the writing process for **The Many Mysteries of the Land Called Shazehi**, a novel that I wrote some time ago. 
 
@@ -26,7 +31,7 @@ The turn structure is as follows:
 
 The first player skips their first Battle step. 
 
-### Starting the game
+#### Starting the game
 Each player starts with 10 health.
 
 At the start of the game, each player takes their Ace and places it in the Ace zone (as mentioned above) and then shuffles their 15 card deck. From there, each player draws four cards.
@@ -49,4 +54,19 @@ The turn player may attack with any number of Weapons, and does so one at a time
 #### End step
 The turn player declares that they are ending their turn and the other player begins from the Draw step again. 
 
+### Advanced rules
+Although the primary game loop is meant to be relatively straightforward, the game itself is a little bit more complicated than this list would let on. 
 
+#### The Outlet
+The Outlet is my implementation of the Chain (from the _Yu-Gi-Oh! Trading Card Game_) into **ASIGOC**. The Outlet is where effects go before they occur. Specifically:
+1. On activation of an Item, Ace, or the activated effect of a Weapon, the effect that is written on the card is added to the Outlet
+2. Whenever a Weapon is moved onto the field from the hand, an effect is added to the Outlet. For Weapons that have an "On entered effect" written on them, that effect is the one that is added to the Outlet, and for all other Weapons, a blank effect is added to the Outlet (meaning that nothing will occur on resolution).
+
+Once no more effects are being added to the Outlet, resolution occurs, meaning that all effects that are currently in the Outlet occur in the reverse order that they were added. If an effect in the Outlet is nullified (there are certain cards which nullify effects that are currently in the Outlet) then that effect does not occur when it is reached as the Outlet is being resolved. 
+
+Effects cannot be added to the Outlet once it starts resolving, until it is completely empty. 
+
+#### Priority
+This one's pretty simple: Whenever an effect is added to the Outlet, the player who did not add that effect has priority when adding the next effect. If they have no effects that they wish to add, they pass priority to the other player, and once both players pass, the Outlet resolves. 
+
+Whenever the turn player wishes to move to the next step, they must also first pass priority to their opponent, who may activate effects. If they choose not to activate effects, the game moves onto the next step, but if they do activate an effect, the standard Outlet rules apply, and after resolution, we do NOT move onto the next step. Instead, the turn player now remains in the original step and may take more actions if they'd like. If they wish to move onto the next step, the entire process repeats itself. 
