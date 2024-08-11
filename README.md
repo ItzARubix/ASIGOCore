@@ -4,7 +4,7 @@ It stands for "A SImple Game Of Cards."
 ## Before getting into the nitty-gritty...
 Two things:
 1. If any of these rules don't make sense to you, or you otherwise have any questions, please feel free to open an Issue. I will do my best to answer them as best as I can
-2. This project had code previously and I decided to do a full wipe of all the code. I was using Java to create this project, but after a while it became evident that Java was not well suited for this project. I will begin working on this project again once I feel more comfortable with Ruby. Until then, you're still welcome to try to contribute (either by asking for rules clarifications in Issues or even attempting to use the vague paragraph of rules that I've given here to try to write some code, though I can't recommend that second one in good faith when I haven't even done it myself. You can also expand on the rules if you'd like, right now they are pretty bare-bones and don't account for a lot of the interactions that I envision, so feel free to open Pull Requests if you'd like)
+2. This project had code previously and I decided to do a full wipe of all the code. I was using Java to create this project, but after a while it became evident that Java was not well suited for this project. I will begin working on this project again once I feel more comfortable with Ruby. Until then, you're still welcome to try to contribute (either by asking for rules clarifications in Issues or even attempting to use the vague paragraph of rules that I've given here to try to write some code, though I can't recommend that second one in good faith when I haven't even done it myself. You can also expand on the rules if you'd like; right now they are pretty bare-bones and don't account for a lot of the interactions that I envision, so feel free to open Pull Requests if you'd like)
 
 ## What is ASIGOCore?
 **ASIGOCore** is meant to serve as the backend for an **ASIGOC** simulator (the C can be silent if you don't like ending with a consonant). **ASIGOC** is a Trading Card Game (similar in style to the *Yu-Gi-Oh! Trading Card Game*) that I made as part of the writing process for **The Many Mysteries of the Land Called Shazehi**, a novel that I wrote some time ago. 
@@ -32,7 +32,7 @@ The turn structure is as follows:
 The first player skips their first Battle step. 
 
 #### Starting the game
-Each player starts with 10 health.
+Each player starts with 10 health. When a player's health drops to 0, that player loses the game.
 
 At the start of the game, each player takes their Ace and places it in the Ace zone (as mentioned above) and then shuffles their 15 card deck. From there, each player draws four cards.
 
